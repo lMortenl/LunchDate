@@ -11,6 +11,7 @@ xhrGet("SimpleServlet", function(responseText){
 	console.log(err);
 });
 
+
 //utilities
 function createXHR(){
 	if(typeof XMLHttpRequest != 'undefined'){
@@ -26,6 +27,8 @@ function createXHR(){
 	}
 	return null;
 }
+
+
 function xhrGet(url, callback, errback){
 	var xhr = new createXHR();
 	xhr.open("GET", url, true);
