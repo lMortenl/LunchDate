@@ -1,5 +1,6 @@
 package wasdev.sample.servlet;
 
+
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -8,11 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class SimpleServlet
- */
-@WebServlet("/SimpleServlet")
-public class SimpleServlet extends HttpServlet {
+@WebServlet("/UserInfo")
+public class UserInfo extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
@@ -21,7 +19,7 @@ public class SimpleServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
-        response.getWriter().print("Hello change1!");
+        response.getWriter().print("Hello from user info!");
     }
     
 }
