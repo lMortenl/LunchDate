@@ -32,7 +32,9 @@ public class UserInfo extends HttpServlet {
         ResultSet rs = null;
         ArrayList<UserInformation> listOfUsers = new ArrayList<UserInformation>();
         try{
+        	MyMessage = "before connect";
             conn = DataBaseConnector.Connect();
+        	MyMessage = "after connect";
             stmt = conn.createStatement();
             rs = stmt.executeQuery("Select * from userinfo");
             
@@ -43,7 +45,6 @@ public class UserInfo extends HttpServlet {
             }            
         }
         catch(Exception e){
-        	MyMessage = e.getMessage();
             e.printStackTrace();
             System.out.println("Error Trace in getConnection() : " + e.getMessage());
         }
@@ -63,7 +64,6 @@ public class UserInfo extends HttpServlet {
         if(listOfUsers.size() > 0)
         {
         	MyMessage = listOfUsers.get(0).Name; 
-        	MyMessage += "size bigger than 0";
         }
         response.getWriter().print("Hello from user info!" + " " + MyMessage);
     }
