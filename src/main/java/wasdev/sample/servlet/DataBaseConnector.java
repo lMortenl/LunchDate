@@ -8,7 +8,6 @@ import java.util.Properties;
 public class DataBaseConnector {
    
    public static java.sql.Connection Connect(){
-
 		String connectionUrl = "jdbc:postgresql://echo-01.db.elephantsql.com:5432/mvyxtiao";
 		String userName = "mvyxtiao";
 		String password = "hWaNiH-BX20jn6DS4cytcb5M9fgWdQAc";
@@ -23,6 +22,5 @@ public class DataBaseConnector {
             System.out.println("Error Trace in getConnection() : " + e.getMessage());
       }
        return con;
-   }
-   
+   }  
 }

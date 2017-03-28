@@ -57,7 +57,7 @@ public class UserInfo extends HttpServlet {
         	}
         }        
         
-        response.getWriter().print("Hello from user info!" + listOfUsers.get(0).Name);
+        response.getWriter().print("Hello from user info!" );//+ listOfUsers.get(0).Name);
     }
     
 }
