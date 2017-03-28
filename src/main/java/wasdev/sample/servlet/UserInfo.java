@@ -3,6 +3,7 @@ package wasdev.sample.servlet;
 
 import java.awt.List;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -56,7 +57,13 @@ public class UserInfo extends HttpServlet {
         		}
         	}
         }        
-        
+        PrintWriter out = response.getWriter();
+        out.println("<html><body>");
+        out.println("<script type=\"text/javascript\">");
+        out.println("window.open(\"pageA.jsp\")");
+        out.println("</script>");
+        out.println("</body></html>");
+        response.sendRedirect("pageB.jsp");
         response.getWriter().print("Hello from user info!" );//+ listOfUsers.get(0).Name);
     }
     
