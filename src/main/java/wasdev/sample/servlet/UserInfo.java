@@ -62,7 +62,8 @@ public class UserInfo extends HttpServlet {
         
         if(listOfUsers.size() > 0)
         {
-        	MyMessage = listOfUsers.get(0).Name;
+        	MyMessage = listOfUsers.get(0).Name; 
+        	MyMessage += "size bigger than 0";
         }
         response.getWriter().print("Hello from user info!" + " " + MyMessage);
     }
