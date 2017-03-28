@@ -57,13 +57,12 @@ public class UserInfo extends HttpServlet {
         		}
         	}
         }        
-        PrintWriter out = response.getWriter();
+        /*PrintWriter out = response.getWriter();
         out.println("<html><body>");
         out.println("<script type=\"text/javascript\">");
         out.println("window.open(\"pageA.jsp\")");
         out.println("</script>");
-        out.println("</body></html>");
-        response.sendRedirect("pageB.jsp");
+        out.println("</body></html>");*/
         response.getWriter().print("Hello from user info!" );//+ listOfUsers.get(0).Name);
     }
     
