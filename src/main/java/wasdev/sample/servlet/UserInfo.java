@@ -59,11 +59,6 @@ public class UserInfo extends HttpServlet {
         		}
         	}
         }
-        PrintWriter out = response.getWriter();  
-        response.setContentType("text/html");  
-        out.println("<script type=\"text/javascript\">");  
-        out.println("alert('deadbeef');");  
-        out.println("</script>");
         response.getWriter().print("Hello from user info!" + MyMessage );//+ listOfUsers.get(0).Name);
     }
     
