@@ -26,6 +26,7 @@ public class UserInfo extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {    	
         response.setContentType("text/html");
+        String MyMessage = "Nothing";
         Connection conn = null;
         Statement stmt = null;
         ResultSet rs = null;
@@ -42,6 +43,7 @@ public class UserInfo extends HttpServlet {
             }            
         }
         catch(Exception e){
+        	MyMessage = e.getMessage();
             e.printStackTrace();
             System.out.println("Error Trace in getConnection() : " + e.getMessage());
         }
@@ -62,7 +64,7 @@ public class UserInfo extends HttpServlet {
         out.println("<script type=\"text/javascript\">");  
         out.println("alert('deadbeef');");  
         out.println("</script>");
-        response.getWriter().print("Hello from user info!" );//+ listOfUsers.get(0).Name);
+        response.getWriter().print("Hello from user info!" + MyMessage );//+ listOfUsers.get(0).Name);
     }
     
 }
