@@ -35,19 +35,17 @@ public class UserInfo extends HttpServlet {
         	MyMessage = "before connect";
             conn = DataBaseConnector.Connect();
         	MyMessage = "after connect";
+        	if(conn == null)
+        	{
+        		MyMessage = "Conn is null";
+        	}
             stmt = conn.createStatement();
-            MyMessage = "after connect2";
             rs = stmt.executeQuery("Select * from userinfo");
-            MyMessage = "after connect3";
             int i = 0;
             while(rs.next()){
-            	MyMessage = "after dude" + i++;
             	String name = rs.getString("user_name");
-            	MyMessage = "after dude" + i++;
             	int age = rs.getInt("user_age");
-            	MyMessage = "after dude" + i++;
             	listOfUsers.add(new UserInformation(name, age));
-            	MyMessage = "after dude" + i++;
             }            
         }
         catch(Exception e){
